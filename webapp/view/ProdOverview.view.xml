@@ -1,4 +1,4 @@
-<mvc:View controllerName="mind2mdepuswiss.controller.Prodoverview"
+<mvc:View controllerName="mind2mdepuswiss.controller.ProdOverview"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m"
     xmlns:f="sap.f"
