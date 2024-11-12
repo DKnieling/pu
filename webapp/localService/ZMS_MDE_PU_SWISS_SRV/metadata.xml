@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="ZMS_MDE_PU_SWISS_SRV" xml:lang="de" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="ZMS_PRODDETAILINCIDENT" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/><PropertyRef Name="Arbpl"/><PropertyRef Name="Aufnr"/><PropertyRef Name="Vornr"/><PropertyRef Name="Folge"/><PropertyRef Name="Laufnr"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Arbeitsplatz" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Auftrag" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Vorgang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Folge" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Folge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Laufnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="RueckID" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Maßnahmentext" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Datum" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Datum" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zeitstempel" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Geändert um"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zkmtgr" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Grund des Kommentars"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kommentar" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Kommentar"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ausschuss" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Rück.Ausschuß"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ausgr" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Kommentar" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="char255" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Meinh" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Mengeneinheit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/></EntityType>
+			<EntityType Name="ZMS_PRODOVERVIEW" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/><PropertyRef Name="Arbpl"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Objid" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Kalkulationsnr"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Arbpl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Arbeitsplatz" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zruestt" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Uhrzeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zprodt" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Uhrzeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Doneflag" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Einstelliges Kennzeichen"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="18" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matxt" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Mat.-Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zruestdelta" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Uhrzeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zprodtdelta" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="Uhrzeit" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zruestvorz" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Einstelliges Kennzeichen"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zprodvorz" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Einstelliges Kennzeichen"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Class" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="char255" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zruestdeltafloat" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Ganze Zahl" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zprodtdeltafloat" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Ganze Zahl" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Aufnr" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Auftrag" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vornr" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Vorgang" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Folge" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Folge" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Mgvrg" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Vorgangsmenge"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Wemng" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Eingegangen"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vorme" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="MengenEh. Vrg." sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/><Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="char255" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kappabed" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Ganze Zahl" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kappatag" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Ganze Zahl" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Zkappaflag" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false"
+					sap:label="Ist die benötigte Tageskappa größer als die bereitgestellte" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="Rueckkom" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Char" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="ZMS_WERKSSELECT" sap:content-version="1">
+				<Key><PropertyRef Name="Werks"/></Key><Property Name="Werks" Type="Edm.String" Nullable="false" MaxLength="4" sap:unicode="false" sap:label="Werk" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Name 1" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityContainer Name="ZMS_MDE_PU_SWISS_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZMS_PRODDETAILINCIDENTSet" EntityType="ZMS_MDE_PU_SWISS_SRV.ZMS_PRODDETAILINCIDENT" sap:creatable="false"
+				sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZMS_PRODOVERVIEWSet" EntityType="ZMS_MDE_PU_SWISS_SRV.ZMS_PRODOVERVIEW" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="ZMS_WERKSSELECTSet" EntityType="ZMS_MDE_PU_SWISS_SRV.ZMS_WERKSSELECT" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/></EntityContainer><atom:link rel="self" href="http://nwmi7.virtual:180/sap/opu/odata/sap/ZMS_MDE_PU_SWISS_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version" href="http://nwmi7.virtual:180/sap/opu/odata/sap/ZMS_MDE_PU_SWISS_SRV/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
