@@ -1,0 +1,23 @@
+.customTileMargin {
+    margin: 10px; /* Freiraum an allen Seiten */
+}
+
+.customNumericContent {
+    font-size: 30px;  /* Ändert die Schriftgröße des Wertes */
+    text-align: center;  /* Zentriert den Wert in der Karte */
+    color: red;  /* Beispiel für eine Farbänderung */
+}
+
+.redBorder {
+    border: 2px solid red;  /* Roter Rand mit 2px Breite */
+    border-radius: 8px;     /* Optional: Abgerundete Ecken */
+}
+
+.greenBorder {
+    border: 2px solid green;  /* Roter Rand mit 2px Breite */
+    border-radius: 8px;     /* Optional: Abgerundete Ecken */
+}
+
+.leftMargin {
+    margin-left: 30px;  /* Abstand von 20px nach links */
+}

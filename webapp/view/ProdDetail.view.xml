@@ -1,0 +1,180 @@
+<mvc:View
+		xmlns:c="sap.ui.core"
+		controllerName="mind2mdepuswiss.controller.ProdDetail"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:u="sap.ui.unified"
+		xmlns="sap.m"
+		xmlns:t="sap.ui.table"
+		xmlns:f="sap.f"
+		xmlns:layout="sap.ui.layout"
+		height="100%">
+		<f:DynamicPage id="dynamicPageId" preserveHeaderStateOnScroll="true" showFooter="true" fitContent="true" headerExpanded="{= ${Vornr} > 0 ? true : false}">
+			<f:title >
+				<f:DynamicPageTitle >
+					<f:heading>
+						<Title text="{Arbpl}"/>
+					</f:heading>
+					<f:expandedContent>
+						<Label text="{Matnr}({Matxt})"/>
+					</f:expandedContent>
+					<f:snappedContent>
+						<Label text="{Matnr}({Matxt})"/>
+					</f:snappedContent>
+					<f:snappedTitleOnMobile>
+						<Title text="{Matnr}({Matxt})"/>
+					</f:snappedTitleOnMobile>
+					<f:content>
+						<OverflowToolbar>
+							<GenericTag text="Benötigte Tageskap.:"
+								status="{= ${Zkappaflag} > 0 ? 'Error' : 'Success'}"
+								design="StatusIconHidden"> <!--press="onGenericTagPress"-->
+								<ObjectNumber number="{Kappabed}"
+									unit="%"
+									emphasized="false"
+									state="{= ${Zkappaflag} > 0 ? 'Error' : 'Success'}"/>
+							</GenericTag>
+						</OverflowToolbar>
+						<OverflowToolbar>
+							<GenericTag text="Live Kapazität:"
+								status="{= ${Zkappaflag} > 0 ? 'Error' : 'Success'}"
+								design="StatusIconHidden"> <!--press="onGenericTagPress"-->
+								<ObjectNumber number="{Kappatag}"
+									unit="%"
+									emphasized="false"
+									state="{= ${Zkappaflag} > 0 ? 'Error' : 'Success'}"/>
+							</GenericTag>
+						</OverflowToolbar>
+					</f:content>
+					<!--<f:actions>
+						<ToolbarSpacer/>
+						<Button
+								text="Edit"
+								type="Emphasized"/>
+						<Button
+								text="Delete"
+								type="Transparent"/>
+						<Button
+								text="Copy"
+								type="Transparent"/>
+						<Button
+								icon="sap-icon://action"
+								type="Transparent"/>
+					</f:actions>-->
+				</f:DynamicPageTitle>
+			</f:title>
+
+			<!-- DynamicPage Header -->
+			<f:header>
+				<f:DynamicPageHeader pinnable="true">
+						<FlexBox
+								alignItems="Start"
+								justifyContent="SpaceBetween">
+							<items>
+								<Panel
+										backgroundDesign="Transparent"
+										class="sapUiNoContentPadding">
+									<content>
+										<layout:HorizontalLayout
+												allowWrapping="true">
+											<layout:VerticalLayout
+													class="sapUiMediumMarginEnd">
+												<ObjectAttribute title="Auftrag" text="{Aufnr}"/>
+												<ObjectAttribute title="Vorgang" text="{Vornr}"/>
+												<ObjectAttribute title="Status" text="{Status}"/>
+											</layout:VerticalLayout>
+											<layout:VerticalLayout>
+												<ObjectAttribute title="Mengen" text="{Wemng}/{Mgvrg}"/>
+												<!--<ObjectAttribute title="Availability"/>
+												<ObjectStatus text="In Stock" state="Success" />-->
+											</layout:VerticalLayout>
+										</layout:HorizontalLayout>
+									</content>
+								</Panel>
+							</items>
+						</FlexBox>
+				</f:DynamicPageHeader>
+			</f:header>
+
+			<f:content>
+				<t:Table
+						id="ErrorTable"
+						rows="{path: 'OverviewToIncident'}"
+						rowMode="Auto">
+					<t:extension>
+						<OverflowToolbar style="Clear">
+							<Title text="Meldungen"/>
+						</OverflowToolbar>
+					</t:extension>
+					<t:columns>
+						<t:Column width="5rem">
+							<Label text="Auftrag" />
+							<t:template>
+								<Text text="{Aufnr}" textAlign="Begin"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="5rem">
+							<Label text="Vorgang" />
+							<t:template>
+								<Text text="{Vornr}" textAlign="Begin"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="6rem">
+							<Label text="Materialnr." />
+							<t:template>
+								<Text text="{Matnr}" textAlign="Begin"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="11rem">
+							<Label text="Materialtext" />
+							<t:template>
+								<Text text="{Matxt}" textAlign="Begin"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="6rem">
+							<Label text="Datum" />
+							<t:template>
+								<Text text="{path: 'Datum', formatter: '.formatDate'}"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="11rem">
+							<Label text="Grund der Meldung" />
+							<t:template>
+									<Text text="{Status}" textAlign="Begin"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="12rem">
+							<Label text="Bemerkung zur Meldung" />
+							<t:template>
+								<Text text="{Kommentar}" textAlign="Begin"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="12rem">
+							<Label text="Bemerkung zum Ausschuss"/>
+							<t:template>
+								<Text text="{Ausgr}" textAlign="Begin"/>
+							</t:template>
+						</t:Column>
+						<t:Column width="6rem">
+							<Label text="Menge Auss." />
+							<t:template>
+								<Text text="{Ausschuss}{Meinh}" textAlign="Begin"/>
+							</t:template>
+						</t:Column>
+					</t:columns>
+				</t:Table>
+			</f:content>
+			<!-- DynamicPage Footer -->
+			<!--<f:footer>
+				<OverflowToolbar>
+					<Button icon="sap-icon://message-popup"
+							text="{/messagesLength}"
+							type="Emphasized"
+							press="onMessageButtonPress"
+							visible="{= !!${/messagesLength}}"/>
+					<ToolbarSpacer/>
+					<Button type="Accept" text="Accept"/>
+					<Button type="Reject" text="Reject"/>
+				</OverflowToolbar>
+			</f:footer>-->
+		</f:DynamicPage>
+</mvc:View>
