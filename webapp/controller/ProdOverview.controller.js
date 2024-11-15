@@ -40,19 +40,21 @@ sap.ui.define([
         return new Promise(resolve => setTimeout(resolve, ms));
       },
 
-      onARBPLsuche: function(){
-        var aFilter = new Array();
-        this.sArbpl = this.getView().byId("ArbplInput").getValue();
-          var fFilter = new sap.ui.model.Filter({
-            path: 'Arbpl',
-            operator: sap.ui.model.FilterOperator.EQ,
-            value1: this.sArbpl
-        });
-  
-        aFilter.push(fFilter);
-          var oItem = this.getView().byId("OverviewCards").getBinding("items").filter(aFilter); 
-          console.log(oItems);
-      },
+      onARBPLsuche: function () {
+	    var aFilter = [];
+	    var sArbpl = this.getView().byId("ArbplInput").getValue();
+	
+	    if (sArbpl) {
+	        // Pass Arbpl as a string in the filter
+	        aFilter.push(new sap.ui.model.Filter("Arbpl", sap.ui.model.FilterOperator.EQ, "'" + sArbpl + "'"));
+	    }
+	
+	    var oBinding = this.getView().byId("OverviewCards").getBinding("items");
+	    if (oBinding) {
+	        oBinding.filter(aFilter);
+	    }
+	},
+	
 
       _onRouteMatched: function (oEvent) {
           var sPath = "/" + oEvent.getParameter("arguments").Path;

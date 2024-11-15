@@ -24,7 +24,7 @@
         <content>
               <FlexBox
                     id="OverviewCards" justifyContent="Center" alignItems="Center" alignContent="Center" direction="Row" renderType="Bare" wrap="Wrap" width="100%" displayInline="true"
-                    items="{path: 'navToOverview', length: 300 }">
+                    items="{path: '/ZMS_PRODOVERVIEWSet'}">
                     <GenericTile header="{Arbpl}" subheader="{Matnr}({Matxt})" press="onPress" frameType = "TwoByOne">
                         <TileContent unit="Rüsten">
                             <NumericContent scale="min" value="{Zruestdeltafloat}" valueColor="{= ${Zruestdeltafloat} >= 0 ? 'Good' : 'Error'}" indicator="{= ${Zruestdeltafloat} >= 0 ? 'Up' : 'Down'}" withMargin="true" />
